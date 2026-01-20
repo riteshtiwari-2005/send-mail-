@@ -5,13 +5,16 @@ const app = express();
 
 // Middleware to parse JSON body
 app.use(express.json());
+console.log(process.env.EMAIL_USER)
+console.log(process.env.EMAIL_PASS)
+
 
 // Create a transporter object
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'ritesht378@gmail.com',
-    pass: 'otinyyqcshezhnyk'
+    user: `process.env.EMAIL_USER '`,
+    pass: 'process.env.EMAIL_PASS'
   }
 });
 
